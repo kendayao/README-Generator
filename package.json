@@ -1,0 +1,25 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "readme generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kendayao/README-Generator.git"
+  },
+  "keywords": [
+    "readme"
+  ],
+  "author": "Kaeneth Dayao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kendayao/README-Generator/issues"
+  },
+  "homepage": "https://github.com/kendayao/README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
