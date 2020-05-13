@@ -19,6 +19,12 @@ inquirer
   },
   {
     type: "input",
+    name: "story",
+    message: "Write a user story",
+    
+  },
+  {
+    type: "input",
     name: "install",
     message: "What are the steps to install your project",
     
@@ -36,19 +42,12 @@ inquirer
     title(fileName, data)
     description(fileName, data)
     tableOfContents(fileName)
+    description(fileName, data)
+    userStory(fileName,data)
+    installation(fileName,data)
+    usage(fileName,data)
     
   });
-
-
-
-
-
-
-
-
-
-
-
 
 
 function title(fileName, data) {
@@ -78,10 +77,35 @@ function description (fileName, data) {
     });
 }
 
+function userStory (fileName, data) {
 
+  fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
 
+}
 
+function installation(fileName, data) {
 
+  fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+
+}
+
+function usage(fileName, data) {
+
+  fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+
+}
 
 
 

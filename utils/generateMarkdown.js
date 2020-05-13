@@ -12,7 +12,7 @@ return `
 ## ${"Table of Contents"}
 
 * [Description](#description)
-* [UserStory](#userstory)
+* [User Story](#userstory)
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
@@ -21,13 +21,31 @@ return `
 * [Questions](#questions)
 
 `
-
-  
 }
 
 function descriptionMarkdown() {
   return `
 ## ${"Description"}
+
+`
+}
+
+function userStoryMarkdown() {
+  return `
+## ${"User Story"}
+
+`
+}
+function installationMarkdown() {
+  return `
+## ${"Installation"}
+
+`
+}
+
+function usageMarkdown() {
+  return `
+## ${"Usage"}
 
 `
 }
@@ -45,7 +63,9 @@ function descriptionMarkdown() {
 module.exports={
   titleMarkdown: titleMarkdown,
   descriptionMarkdown: descriptionMarkdown,
-  tableOfContentsMarkdown: tableOfContentsMarkdown
+  tableOfContentsMarkdown: tableOfContentsMarkdown,
+  installationMarkdown: installationMarkdown,
+  userStoryMarkdown: userStoryMarkdown
 }
 
 // module.exports = generateMarkdown;
