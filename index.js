@@ -64,7 +64,7 @@ inquirer
   {
     type: "input",
     name: "contributing",
-    message: "What does user need to know about contributing",
+    message: "What does user need to know about contributing?",
     
   },
   {
@@ -77,10 +77,15 @@ inquirer
 
   ]).then(function(data){
     var fileName = "README.md"
+    
     title(fileName, data);
     profilePicture(fileName,data);
-    description(fileName, data);
     tableOfContents(fileName);
+
+ setTimeout(() => {
+   
+ 
+    description(fileName, data);
     userStory(fileName,data);
     installation(fileName,data);
     usage(fileName,data);
@@ -89,8 +94,9 @@ inquirer
     tests(fileName,data);
     questions(fileName,data);
     deployedApp(fileName,data)
-    
+  }, 4000);
   });
+
 
 
 
@@ -107,7 +113,7 @@ function title(fileName, data) {
 }
 
 function profilePicture(fileName, data){
-const queryUrl="https://api.github.com/users/${data.username}/repos?per_page=100"
+const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
 axios
   .get(queryUrl)
   .then(function(res) {
@@ -119,9 +125,6 @@ axios
       }
   });
   });
-    
- 
-
 }
 
 function description (fileName, data) {
@@ -216,7 +219,7 @@ if(license==="Unlicense"){
 
 function contributing(fileName, data) {
 
-  fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ contributing.usage + '\n'+ '\n', function(error) {
+  fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ data.contributing + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
   }
@@ -225,7 +228,7 @@ function contributing(fileName, data) {
 }
 function tests(fileName, data) {
 
-  fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ tests.usage + '\n'+ '\n', function(error) {
+  fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ data.tests + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
   }else{
@@ -238,7 +241,7 @@ function tests(fileName, data) {
 
 function questions(fileName, data) {
 
-  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + "." + '\n', function(error) {
+  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + '\n', function(error) {
     if (error){
       console.log(error)
   }
@@ -300,11 +303,11 @@ function deployedApp(fileName, data) {
 
 
 
-function init() {
+// function init() {
 
-}
+// }
 
-init();
+// init();
 
 
 

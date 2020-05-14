@@ -25,6 +25,7 @@ return `
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
+* [Deployed Application URL](#deployed-application-URL)
 `
 }
 
@@ -59,7 +60,7 @@ function licenseMarkdown() {
 
 function contributingMarkdown() {
   return `
-## ${"Contrbuting"}
+## ${"Contributing"}
 
 `
 }
@@ -74,6 +75,13 @@ function testsMarkdown() {
 function questionsMarkdown() {
   return `
 ## ${"Questions"}
+
+`
+}
+
+function appMarkdown() {
+  return `
+## ${"Deployed Application URL"}
 
 `
 }
@@ -96,7 +104,8 @@ module.exports={
   licenseMarkdown: licenseMarkdown,
   contributingMarkdown: contributingMarkdown,
   testsMarkdown: testsMarkdown,
-  questionsMarkdown: questionsMarkdown
+  questionsMarkdown: questionsMarkdown,
+  appMarkdown: appMarkdown
 
 }
 
