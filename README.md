@@ -1,12 +1,15 @@
 
-# Read Me Generator
+
+# App
+
 
 
 
 ## Description
 
 
-Created a Readme for a project
+This is an app
+
 
 ## Table of Contents
 
@@ -20,22 +23,28 @@ Created a Readme for a project
 * [Questions](#questions)
 
 
-## Installation
-
-
-install npm
-
-## User Story
-
-
-As a developer I would like a readme generator to create a readme for a new project
 
 ## Usage
 
 
-in terminal type in index.js
+index.js
+
 
 ## License
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
+
+## User Story
+
+
+as a developer i need this app
+
+
+## Installation
+
+
+isntall npm
+
+![](https://avatars3.githubusercontent.com/u/62568395?v=4)

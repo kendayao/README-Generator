@@ -1,13 +1,14 @@
 
 var inquirer = require("inquirer")
 var newFile = require("./utils/generateMarkdown.js")
+const axios = require("axios")
 var fs = require("fs")
 
 inquirer
   .prompt([
     {
       type: "input",
-      name: "unsername",
+      name: "username",
       message: "What is your github username?",
       
     },
@@ -64,15 +65,20 @@ inquirer
 
   ]).then(function(data){
     var fileName = "README.md"
-    title(fileName, data)
-    description(fileName, data)
-    tableOfContents(fileName)
-    userStory(fileName,data)
-    installation(fileName,data)
-    usage(fileName,data)
-    license(fileName,data)
+    title(fileName, data);
+    profilePicture(fileName,data);
+    description(fileName, data);
+    tableOfContents(fileName);
+    userStory(fileName,data);
+    installation(fileName,data);
+    usage(fileName,data);
+    license(fileName,data);
     
   });
+
+
+
+
 
 
 function title(fileName, data) {
@@ -82,6 +88,24 @@ function title(fileName, data) {
             console.log(error)
         }
     });
+}
+
+function profilePicture(fileName, data){
+const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
+axios
+  .get(queryUrl)
+  .then(function(res) {
+    profileLink = (res.data[0].owner.avatar_url)
+    
+    fs.appendFile(fileName, "![]" + "(" + profileLink + ")" + '\n' , function(error){
+      if (error){
+          console.log(error)
+      }
+  });
+  });
+    
+ 
+
 }
 
 function description (fileName, data) {
@@ -186,6 +210,37 @@ function questions() {
 });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
