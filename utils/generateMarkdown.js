@@ -5,6 +5,12 @@ function titleMarkdown(data) {
 `
 }
 
+function descriptionMarkdown() {
+  return `
+## ${"Description"}
+
+`
+}
 
 function tableOfContentsMarkdown() {
   
@@ -12,23 +18,17 @@ return `
 ## ${"Table of Contents"}
 
 * [Description](#description)
-* [User Story](#userstory)
+* [User Story](#user-story)
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
-
 `
 }
 
-function descriptionMarkdown() {
-  return `
-## ${"Description"}
 
-`
-}
 
 function userStoryMarkdown() {
   return `
@@ -50,7 +50,33 @@ function usageMarkdown() {
 `
 }
 
+function licenseMarkdown() {
+  return `
+## ${"License"}
 
+`
+}
+
+function contributingMarkdown() {
+  return `
+## ${"Contrbuting"}
+
+`
+}
+
+function testsMarkdown() {
+  return `
+## ${"Tests"}
+
+`
+}
+
+function questionsMarkdown() {
+  return `
+## ${"Questions"}
+
+`
+}
 
 
 
@@ -65,7 +91,13 @@ module.exports={
   descriptionMarkdown: descriptionMarkdown,
   tableOfContentsMarkdown: tableOfContentsMarkdown,
   installationMarkdown: installationMarkdown,
-  userStoryMarkdown: userStoryMarkdown
+  userStoryMarkdown: userStoryMarkdown,
+  usageMarkdown: usageMarkdown,
+  licenseMarkdown: licenseMarkdown,
+  contributingMarkdown: contributingMarkdown,
+  testsMarkdown: testsMarkdown,
+  questionsMarkdown: questionsMarkdown
+
 }
 
 // module.exports = generateMarkdown;

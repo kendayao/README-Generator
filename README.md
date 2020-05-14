@@ -1,19 +1,17 @@
 
-
-
-# sdfsdf
+# Read Me Generator
 
 
 
 ## Description
 
 
-sdfsdf
+Created a Readme for a project
 
 ## Table of Contents
 
 * [Description](#description)
-* [User_Story](#user story)
+* [User Story](#user-story)
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
@@ -22,47 +20,22 @@ sdfsdf
 * [Questions](#questions)
 
 
-
-# sdf
-
+## Installation
 
 
-## Description
+install npm
+
+## User Story
 
 
-sdf
+As a developer I would like a readme generator to create a readme for a new project
 
-## Table of Contents
-
-* [Description](#description)
-* [UserStory](#userstory)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
+## Usage
 
 
+in terminal type in index.js
 
-# Weather App
-
-
-
-## Description
+## License
 
 
-Get weather
-
-## Table of Contents
-
-* [Description](#description)
-* [UserStory](#userstory)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
-
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

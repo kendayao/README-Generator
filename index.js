@@ -5,6 +5,24 @@ var fs = require("fs")
 
 inquirer
   .prompt([
+    {
+      type: "input",
+      name: "unsername",
+      message: "What is your github username?",
+      
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is your email?",
+      
+    },
+    {
+      type: "input",
+      name: "project",
+      message: "Paste your project URL",
+      
+    },
       {
     type: "input",
     name: "title",
@@ -14,25 +32,32 @@ inquirer
   {
     type: "input",
     name: "description",
-    message: "Provide a short description of your project",
+    message: "Provide a short description of your project:",
     
   },
   {
     type: "input",
     name: "story",
-    message: "Write a user story",
+    message: "Write a user story:",
     
   },
   {
     type: "input",
     name: "install",
-    message: "What are the steps to install your project",
+    message: "What are the steps to install your project?",
     
   },
   {
     type: "input",
     name: "usage",
-    message: "Provide instructions for use",
+    message: "Provide instructions for use:",
+    
+  },
+  {
+    type: "list",
+    name: "license",
+    message: "Choose your license?",
+    choices: ["ISC", "MIT", "BSD-3", "BSD-2", "Unlicense"]
     
   },
   
@@ -42,44 +67,44 @@ inquirer
     title(fileName, data)
     description(fileName, data)
     tableOfContents(fileName)
-    description(fileName, data)
     userStory(fileName,data)
     installation(fileName,data)
     usage(fileName,data)
+    license(fileName,data)
     
   });
 
 
 function title(fileName, data) {
     
-    fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n', function(error){
+    fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n' + '\n', function(error){
         if (error){
             console.log(error)
         }
     });
 }
 
-function tableOfContents (fileName) {
-   
-  fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n', function(error){
+function description (fileName, data) {
+    
+  fs.appendFile(fileName, newFile.descriptionMarkdown() + '\n' + data.description + '\n' + '\n' , function(error){
       if (error){
           console.log(error)
       }
   });
 }
 
-function description (fileName, data) {
-    
-    fs.appendFile(fileName, newFile.descriptionMarkdown() + '\n' + data.description + '\n' , function(error){
-        if (error){
-            console.log(error)
-        }
-    });
+function tableOfContents (fileName) {
+   
+  fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n' + '\n', function(error){
+      if (error){
+          console.log(error)
+      }
+  });
 }
 
 function userStory (fileName, data) {
 
-  fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n', function(error) {
+  fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
   }
@@ -89,7 +114,7 @@ function userStory (fileName, data) {
 
 function installation(fileName, data) {
 
-  fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n', function(error) {
+  fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
   }
@@ -99,13 +124,72 @@ function installation(fileName, data) {
 
 function usage(fileName, data) {
 
-  fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n', function(error) {
+  fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
   }
 });
 
 }
+
+
+function license(fileName, data) {
+
+  var license= data.license
+
+  if(license==="ISC"){
+  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
+if(license==="MIT"){
+  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
+if(license==="BSD-3"){
+  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
+if(license==="BSD-2"){
+  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
+if(license==="Unlicense"){
+  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
+}
+
+
+
+
+function questions() {
+
+  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions please reach out" + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+
+}
+
+
+
+
 
 
 
