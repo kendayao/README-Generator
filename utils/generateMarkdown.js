@@ -1,3 +1,5 @@
+
+// generate title markdown function
 function titleMarkdown(data) {
   return `
 # ${data.title}
@@ -5,6 +7,7 @@ function titleMarkdown(data) {
 `
 }
 
+// generate description markdown function
 function descriptionMarkdown() {
   return `
 ## ${"Description"}
@@ -12,6 +15,7 @@ function descriptionMarkdown() {
 `
 }
 
+// generate table of contents markdown function
 function tableOfContentsMarkdown() {
   
 return `
@@ -30,13 +34,15 @@ return `
 }
 
 
-
+// generate user story markdown function
 function userStoryMarkdown() {
   return `
 ## ${"User Story"}
 
 `
 }
+
+// generate installation markdown function
 function installationMarkdown() {
   return `
 ## ${"Installation"}
@@ -44,6 +50,7 @@ function installationMarkdown() {
 `
 }
 
+// generate usage markdown function
 function usageMarkdown() {
   return `
 ## ${"Usage"}
@@ -58,6 +65,7 @@ function licenseMarkdown() {
 `
 }
 
+// generate contributing marldown function
 function contributingMarkdown() {
   return `
 ## ${"Contributing"}
@@ -65,6 +73,7 @@ function contributingMarkdown() {
 `
 }
 
+// generate tests markdown function
 function testsMarkdown() {
   return `
 ## ${"Tests"}
@@ -72,6 +81,7 @@ function testsMarkdown() {
 `
 }
 
+// generate questions markdown function
 function questionsMarkdown() {
   return `
 ## ${"Questions"}
@@ -79,6 +89,7 @@ function questionsMarkdown() {
 `
 }
 
+// generate deployed app markdown
 function appMarkdown() {
   return `
 ## ${"Deployed Application URL"}
@@ -87,13 +98,7 @@ function appMarkdown() {
 }
 
 
-
-
-
-
-
-
-
+// module exports
 module.exports={
   titleMarkdown: titleMarkdown,
   descriptionMarkdown: descriptionMarkdown,
@@ -109,4 +114,3 @@ module.exports={
 
 }
 
-// module.exports = generateMarkdown;
