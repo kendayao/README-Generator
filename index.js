@@ -108,7 +108,6 @@ inquirer
       }
     });
     });
-  
   }
 
     function description (fileName, data) {
@@ -130,132 +129,125 @@ inquirer
     });
   }
 
-function userStory (fileName, data) {
+    function userStory (fileName, data) {
 
-  fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n'+ '\n', function(error) {
+    fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     installation(fileName,data);
+    }
+    });
+
   }
-});
 
-}
+    function installation(fileName, data) {
 
-function installation(fileName, data) {
-
-  fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n'+ '\n', function(error) {
+    fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     usage(fileName,data);
+    }
+    });
   }
-});
 
-}
+    function usage(fileName, data) {
 
-function usage(fileName, data) {
-
-  fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n'+ '\n', function(error) {
+    fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     license(fileName,data);
+    }
+    });
   }
-});
-
-}
 
 
-function license(fileName, data) {
+    function license(fileName, data) {
 
-  var license= data.license
+    var license= data.license
 
-  if(license==="ISC"){
-  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)" + '\n'+ '\n', function(error) {
+    if(license==="ISC"){
+    fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)" + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+    }
+    });
   }
-});
-}
-if(license==="MIT"){
-  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" + '\n'+ '\n', function(error) {
+    if(license==="MIT"){
+    fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+    }
+    });
   }
-});
-}
-if(license==="BSD-3"){
-  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" + '\n'+ '\n', function(error) {
+    if(license==="BSD-3"){
+    fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)" + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+    }
+    });
   }
-});
-}
-if(license==="BSD-2"){
-  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)" + '\n'+ '\n', function(error) {
+    if(license==="BSD-2"){
+    fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)" + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+    }
+    });
   }
-});
-}
-if(license==="Unlicense"){
-  fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)" + '\n'+ '\n', function(error) {
+    if(license==="Unlicense"){
+    fs.appendFile(fileName, newFile.licenseMarkdown()+ '\n'+ "[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)" + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+    }
+    });
   }
-});
-}
-contributing(fileName,data);
-}
+    contributing(fileName,data);
+  }
 
-function contributing(fileName, data) {
+    function contributing(fileName, data) {
 
-  fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ data.contributing + '\n'+ '\n', function(error) {
+    fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ data.contributing + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }else{tests(fileName,data);}
-});
+    }else{tests(fileName,data);}
+  });
+  }
 
-}
-function tests(fileName, data) {
+    function tests(fileName, data) {
 
-  fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ data.tests + '\n'+ '\n', function(error) {
+    fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ data.tests + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     questions(fileName,data);
+    }
+    });
   }
-});
-
-}
 
 
-function questions(fileName, data) {
+    function questions(fileName, data) {
 
-  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + '\n', function(error) {
+    fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     deployedApp(fileName,data)
+    }
+    });
   }
-});
 
-}
-
-function deployedApp(fileName, data) {
+    function deployedApp(fileName, data) {
   
-  fs.appendFile(fileName, newFile.appMarkdown()+ '\n'+ data.project + '\n', function(error) {
+    fs.appendFile(fileName, newFile.appMarkdown()+ '\n'+ data.project + '\n', function(error) {
     if (error){
       console.log(error)
-  }else{
+    }else{
     console.log("README Generated")
+    }
+  });
   }
-});
-
-}
-
-
 
   });
 
