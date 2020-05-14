@@ -1,5 +1,6 @@
 
-# Weather Dashboard
+# README Generator
+
 
 
 ![](https://avatars3.githubusercontent.com/u/62568395?v=4)
@@ -7,7 +8,7 @@
 ## Description
 
 
-This is a weather dasboard. Languages used for this project are HTML, Bootstrap, CSS, Javascript, and JQUery. A user will type in their city and then the browser will display current and future weather for that city.
+This is a README Generator. Node.js and javascript were both used for this project. This application generates a README that can be used for github projects.
 
 
 ## Table of Contents
@@ -27,19 +28,19 @@ This is a weather dasboard. Languages used for this project are HTML, Bootstrap,
 ## User Story
 
 
-AS A traveler, I WANT to see the weather outlook for multiple cities SO THAT i can plan a trip accordingly.
+AS A developer, I WANT a README generator, SO THAT I can easily put together a good README for a new project
 
 
 ## Installation
 
 
-There are no installation steps. Just begin by loading the browser and typing in a city or click on a saved city.
+You will need to do a npm install in order to install inquirer and axios.
 
 
 ## Usage
 
 
-To start, type in a city name in the text input area. Click on search to display the current weather conditions for that city. Below the current weather display will show the 5 day weather forecast.
+In Git Bash or Terminal, type in node index.js. Answer the questions to generate a README in a README.md file.
 
 
 ## License
@@ -51,13 +52,13 @@ To start, type in a city name in the text input area. Click on search to display
 ## Contributing
 
 
-Please follow standard contributing guidelines
+Please follow standard contributing guidelines.
 
 
 ## Tests
 
 
-No tests to run
+No tests to run.
 
 
 ## Questions
@@ -68,4 +69,4 @@ For any questions, please contact kendayao at kendayao@gmail.com
 ## Deployed Application URL
 
 
-https://kendayao.github.io/Weather-Dashboard/
+No deployed link for this project
