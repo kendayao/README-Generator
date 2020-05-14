@@ -1,6 +1,13 @@
 
-# fefffffffff
+# ReadMe Generator
 
+
+![](https://avatars3.githubusercontent.com/u/62568395?v=4)
+
+## Description
+
+
+Create a readme generator
 
 
 ## Table of Contents
@@ -16,47 +23,41 @@
 * [Deployed Application URL](#deployed-application-URL)
 
 
-![](https://avatars3.githubusercontent.com/u/62568395?v=4)
-
-## Description
-
-
-ferhjfhih
-
 
 ## User Story
 
 
-fjfnfnjhsjksene
-
-
-## License
-
-
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+As a developer, i want a readme fenerator
 
 
 ## Installation
 
 
-rjkjfoiio
+npm install
+
+
+## Usage
+
+
+terminal index.js
+
+
+## License
+
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 
 ## Contributing
 
 
-dsjklejkjk
+none
 
-
-## Deployed Application URL
-
-
-fsfr.com
 
 ## Tests
 
 
-djskejke
+none
 
 
 ## Questions
@@ -64,8 +65,7 @@ djskejke
 
 For any questions, please contact kendayao at kendayao@gmail.com
 
-## Usage
+## Deployed Application URL
 
 
-rfsjdjsklje
-
+project.com

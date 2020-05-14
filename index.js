@@ -15,7 +15,7 @@ inquirer
     {
       type: "input",
       name: "email",
-      message: "What is your email?",
+      message: "What is your github email?",
       
     },
     {
@@ -78,30 +78,7 @@ inquirer
   ]).then(function(data){
     var fileName = "README.md"
     
-    title(fileName, data);
-    profilePicture(fileName,data);
-    tableOfContents(fileName);
-
- setTimeout(() => {
-   
- 
-    description(fileName, data);
-    userStory(fileName,data);
-    installation(fileName,data);
-    usage(fileName,data);
-    license(fileName,data);
-    contributing(fileName,data);
-    tests(fileName,data);
-    questions(fileName,data);
-    deployedApp(fileName,data)
-  }, 4000);
-  });
-
-
-
-
-
-
+    title(fileName,data);
 
 function title(fileName, data) {
     
@@ -110,6 +87,7 @@ function title(fileName, data) {
             console.log(error)
         }
     });
+    profilePicture(fileName,data);
 }
 
 function profilePicture(fileName, data){
@@ -122,9 +100,13 @@ axios
     fs.appendFile(fileName, "![]" + "(" + profileLink + ")" + '\n' , function(error){
       if (error){
           console.log(error)
+      } else{setTimeout(() => {tableOfContents(fileName)}, 4000);
+      description(fileName, data)
+
       }
   });
   });
+  
 }
 
 function description (fileName, data) {
@@ -141,8 +123,11 @@ function tableOfContents (fileName) {
   fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n' + '\n', function(error){
       if (error){
           console.log(error)
+      } else{userStory(fileName,data);
+
       }
   });
+  
 }
 
 function userStory (fileName, data) {
@@ -150,6 +135,8 @@ function userStory (fileName, data) {
   fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+  }else{
+    installation(fileName,data);
   }
 });
 
@@ -160,6 +147,8 @@ function installation(fileName, data) {
   fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+  }else{
+    usage(fileName,data);
   }
 });
 
@@ -170,6 +159,8 @@ function usage(fileName, data) {
   fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
+  }else{
+    license(fileName,data);
   }
 });
 
@@ -215,6 +206,7 @@ if(license==="Unlicense"){
   }
 });
 }
+contributing(fileName,data);
 }
 
 function contributing(fileName, data) {
@@ -222,7 +214,7 @@ function contributing(fileName, data) {
   fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ data.contributing + '\n'+ '\n', function(error) {
     if (error){
       console.log(error)
-  }
+  }else{tests(fileName,data);}
 });
 
 }
@@ -232,7 +224,7 @@ function tests(fileName, data) {
     if (error){
       console.log(error)
   }else{
-    console.log("ReadMe Successfully Generated")
+    questions(fileName,data);
   }
 });
 
@@ -244,6 +236,8 @@ function questions(fileName, data) {
   fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + '\n', function(error) {
     if (error){
       console.log(error)
+  }else{
+    deployedApp(fileName,data)
   }
 });
 
@@ -254,13 +248,16 @@ function deployedApp(fileName, data) {
   fs.appendFile(fileName, newFile.appMarkdown()+ '\n'+ data.project + '\n', function(error) {
     if (error){
       console.log(error)
+  }else{
+    console.log("README Generated")
   }
 });
+
 }
 
 
 
-
+  });
 
 
 
