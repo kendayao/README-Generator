@@ -1,5 +1,5 @@
 
-# ReadMe Generator
+# Weather Dashboard
 
 
 ![](https://avatars3.githubusercontent.com/u/62568395?v=4)
@@ -7,7 +7,7 @@
 ## Description
 
 
-Create a readme generator
+This is a weather dasboard. Languages used for this project are HTML, Bootstrap, CSS, Javascript, and JQUery. A user will type in their city and then the browser will display current and future weather for that city.
 
 
 ## Table of Contents
@@ -27,37 +27,37 @@ Create a readme generator
 ## User Story
 
 
-As a developer, i want a readme fenerator
+AS A traveler, I WANT to see the weather outlook for multiple cities SO THAT i can plan a trip accordingly.
 
 
 ## Installation
 
 
-npm install
+There are no installation steps. Just begin by loading the browser and typing in a city or click on a saved city.
 
 
 ## Usage
 
 
-terminal index.js
+To start, type in a city name in the text input area. Click on search to display the current weather conditions for that city. Below the current weather display will show the 5 day weather forecast.
 
 
 ## License
 
 
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 
 ## Contributing
 
 
-none
+Please follow standard contributing guidelines
 
 
 ## Tests
 
 
-none
+No tests to run
 
 
 ## Questions
@@ -68,4 +68,4 @@ For any questions, please contact kendayao at kendayao@gmail.com
 ## Deployed Application URL
 
 
-project.com
+https://kendayao.github.io/Weather-Dashboard/

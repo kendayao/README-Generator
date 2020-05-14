@@ -1,9 +1,11 @@
 
+// Required packages
 var inquirer = require("inquirer")
 var newFile = require("./utils/generateMarkdown.js")
 const axios = require("axios")
 var fs = require("fs")
 
+// questions
 inquirer
   .prompt([
     {
@@ -80,55 +82,53 @@ inquirer
     
     title(fileName,data);
 
-function title(fileName, data) {
+    function title(fileName, data) {
     
     fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n', function(error){
         if (error){
             console.log(error)
         }
-    });
-    profilePicture(fileName,data);
-}
+        });
+      profilePicture(fileName,data);
+    }
 
-function profilePicture(fileName, data){
-const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
-axios
-  .get(queryUrl)
-  .then(function(res) {
+    function profilePicture(fileName, data){
+    const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
+    axios
+    .get(queryUrl)
+    .then(function(res) {
     profileLink = (res.data[0].owner.avatar_url)
     
     fs.appendFile(fileName, "![]" + "(" + profileLink + ")" + '\n' , function(error){
       if (error){
           console.log(error)
-      } else{setTimeout(() => {tableOfContents(fileName)}, 4000);
+      } else{setTimeout(() => {tableOfContents(fileName)}, 3000);
       description(fileName, data)
 
       }
-  });
-  });
+    });
+    });
   
-}
+  }
 
-function description (fileName, data) {
+    function description (fileName, data) {
     
-  fs.appendFile(fileName, newFile.descriptionMarkdown() + '\n' + data.description + '\n' + '\n' , function(error){
+    fs.appendFile(fileName, newFile.descriptionMarkdown() + '\n' + data.description + '\n' + '\n' , function(error){
       if (error){
           console.log(error)
       }
-  });
-}
+    });
+  }
 
-function tableOfContents (fileName) {
+    function tableOfContents (fileName) {
    
-  fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n' + '\n', function(error){
+    fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n' + '\n', function(error){
       if (error){
           console.log(error)
       } else{userStory(fileName,data);
-
       }
-  });
-  
-}
+    });
+  }
 
 function userStory (fileName, data) {
 
