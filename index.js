@@ -88,6 +88,7 @@ inquirer
     contributing(fileName,data);
     tests(fileName,data);
     questions(fileName,data);
+    deployedApp(fileName,data)
     
   });
 
@@ -245,6 +246,14 @@ function questions(fileName, data) {
 
 }
 
+function deployedApp(fileName, data) {
+  
+  fs.appendFile(fileName, newFile.appMarkdown()+ '\n'+ data.project + '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+}
 
 
 
