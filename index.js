@@ -21,7 +21,7 @@ inquirer
     {
       type: "input",
       name: "project",
-      message: "Paste your project URL",
+      message: "Paste your deployed project URL:",
       
     },
       {
@@ -61,6 +61,18 @@ inquirer
     choices: ["ISC", "MIT", "BSD-3", "BSD-2", "Unlicense"]
     
   },
+  {
+    type: "input",
+    name: "contributing",
+    message: "What does user need to know about contributing",
+    
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "If applicable, what command should be run to run tests?",
+    
+  },
   
 
   ]).then(function(data){
@@ -73,6 +85,9 @@ inquirer
     installation(fileName,data);
     usage(fileName,data);
     license(fileName,data);
+    contributing(fileName,data);
+    tests(fileName,data);
+    questions(fileName,data);
     
   });
 
@@ -83,7 +98,7 @@ inquirer
 
 function title(fileName, data) {
     
-    fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n' + '\n', function(error){
+    fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n', function(error){
         if (error){
             console.log(error)
         }
@@ -91,7 +106,7 @@ function title(fileName, data) {
 }
 
 function profilePicture(fileName, data){
-const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
+const queryUrl="https://api.github.com/users/${data.username}/repos?per_page=100"
 axios
   .get(queryUrl)
   .then(function(res) {
@@ -198,12 +213,31 @@ if(license==="Unlicense"){
 }
 }
 
+function contributing(fileName, data) {
+
+  fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ contributing.usage + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }
+});
+
+}
+function tests(fileName, data) {
+
+  fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ tests.usage + '\n'+ '\n', function(error) {
+    if (error){
+      console.log(error)
+  }else{
+    console.log("ReadMe Successfully Generated")
+  }
+});
+
+}
 
 
+function questions(fileName, data) {
 
-function questions() {
-
-  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions please reach out" + '\n'+ '\n', function(error) {
+  fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + "." + '\n', function(error) {
     if (error){
       console.log(error)
   }
