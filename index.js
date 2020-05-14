@@ -76,12 +76,13 @@ inquirer
     
   },
   
-
+  // once questions are answered, runs functions to append data to readme file
   ]).then(function(data){
     var fileName = "README.md"
     
+    
     title(fileName,data);
-
+    // add project title to readme
     function title(fileName, data) {
     
     fs.appendFile(fileName, newFile.titleMarkdown(data) + '\n', function(error){
@@ -92,6 +93,7 @@ inquirer
       profilePicture(fileName,data);
     }
 
+    // add profile picture to readme file
     function profilePicture(fileName, data){
     const queryUrl=`https://api.github.com/users/${data.username}/repos?per_page=100`
     axios
@@ -110,6 +112,7 @@ inquirer
     });
   }
 
+    // add description of project to ReadME file
     function description (fileName, data) {
     
     fs.appendFile(fileName, newFile.descriptionMarkdown() + '\n' + data.description + '\n' + '\n' , function(error){
@@ -119,6 +122,7 @@ inquirer
     });
   }
 
+    // add table of contents to readme file
     function tableOfContents (fileName) {
    
     fs.appendFile(fileName, newFile.tableOfContentsMarkdown() + '\n' + '\n', function(error){
@@ -129,6 +133,7 @@ inquirer
     });
   }
 
+    // add user story to readme file
     function userStory (fileName, data) {
 
     fs.appendFile(fileName, newFile.userStoryMarkdown()+ '\n'+ data.story + '\n'+ '\n', function(error) {
@@ -141,6 +146,7 @@ inquirer
 
   }
 
+    // add instllation instructions to readme file
     function installation(fileName, data) {
 
     fs.appendFile(fileName, newFile.installationMarkdown()+ '\n'+ data.install + '\n'+ '\n', function(error) {
@@ -152,6 +158,7 @@ inquirer
     });
   }
 
+    // add how to use application to readme file
     function usage(fileName, data) {
 
     fs.appendFile(fileName, newFile.usageMarkdown()+ '\n'+ data.usage + '\n'+ '\n', function(error) {
@@ -163,7 +170,7 @@ inquirer
     });
   }
 
-
+    // add license section to readme file with badge 
     function license(fileName, data) {
 
     var license= data.license
@@ -206,6 +213,7 @@ inquirer
     contributing(fileName,data);
   }
 
+    // add contribtuon guidelines to readme file
     function contributing(fileName, data) {
 
     fs.appendFile(fileName, newFile.contributingMarkdown()+ '\n'+ data.contributing + '\n'+ '\n', function(error) {
@@ -215,6 +223,7 @@ inquirer
   });
   }
 
+    // add testing instructions to readme file
     function tests(fileName, data) {
 
     fs.appendFile(fileName, newFile.testsMarkdown()+ '\n'+ data.tests + '\n'+ '\n', function(error) {
@@ -226,7 +235,7 @@ inquirer
     });
   }
 
-
+    // add questions to readme file
     function questions(fileName, data) {
 
     fs.appendFile(fileName, newFile.questionsMarkdown()+ '\n'+ "For any questions, please contact " + data.username + " at " + data.email + '\n', function(error) {
@@ -238,13 +247,14 @@ inquirer
     });
   }
 
+    // add link to deployed app to readme file
     function deployedApp(fileName, data) {
   
     fs.appendFile(fileName, newFile.appMarkdown()+ '\n'+ data.project + '\n', function(error) {
     if (error){
       console.log(error)
     }else{
-    console.log("README Generated")
+    console.log("README Successfully Generated")
     }
   });
   }
