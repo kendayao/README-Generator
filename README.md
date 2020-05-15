@@ -2,7 +2,6 @@
 # README Generator
 
 
-
 ![](https://avatars3.githubusercontent.com/u/62568395?v=4)
 
 ## Description
@@ -69,4 +68,4 @@ For any questions, please contact kendayao at kendayao@gmail.com
 ## Deployed Application URL
 
 
-No deployed link for this project
+Video of deployed application: https://www.youtube.com/watch?v=4nsxdE4tEJY&feature=youtu.be
