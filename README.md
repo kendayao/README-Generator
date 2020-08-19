@@ -2,17 +2,18 @@
 # README Generator
 
 
-![](https://avatars3.githubusercontent.com/u/62568395?v=4)
+
 
 ## Description
 
 
-This is a README Generator. Node.js and javascript were both used for this project. This application generates a README that can be used for github projects.
+README Generator is a command line interface application that generates a professional README that can be used for github projects. The content of the readme is based on what is inputed by the user.
 
 
 ## Table of Contents
 
 * [Description](#description)
+* [Technology](#technology)
 * [User Story](#user-story)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -22,6 +23,13 @@ This is a README Generator. Node.js and javascript were both used for this proje
 * [Questions](#questions)
 * [Deployed Application URL](#deployed-application-URL)
 
+
+## Technology
+
+- Node
+- JavaScript
+- Inquirer
+- Axios
 
 
 ## User Story
@@ -67,5 +75,10 @@ For any questions, please contact kendayao at kendayao@gmail.com
 
 ## Deployed Application URL
 
+![](https://avatars3.githubusercontent.com/u/62568395?v=4)
 
 Video of deployed application: https://www.youtube.com/watch?v=4nsxdE4tEJY&feature=youtu.be
+
+
+
+
