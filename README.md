@@ -70,12 +70,13 @@ No tests to run.
 
 ## Questions
 
+![](https://avatars3.githubusercontent.com/u/62568395?v=4)
 
 For any questions, please contact kendayao at kendayao@gmail.com
 
 ## Deployed Application URL
 
-![](https://avatars3.githubusercontent.com/u/62568395?v=4)
+
 
 Video of deployed application: https://www.youtube.com/watch?v=4nsxdE4tEJY&feature=youtu.be
 
